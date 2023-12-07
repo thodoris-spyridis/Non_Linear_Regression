@@ -6,7 +6,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
 
 #red the data from the excel file
-data = pd.read_excel("Greece_listings.xlsx", sheet_name="Listings", converters={"location_name": str, "res_sqr": float, "construction_year": float, "bedrooms": int, "res_price": float})
+data = pd.read_excel("Greece_listings.xlsx", sheet_name="Listings")
 data.head(10)
 
 #set the features and target values
@@ -20,6 +20,11 @@ x[:, 0:1] = imputer.transform(x[:, 0:1])
 
 #split the dataset to training and tes datasets
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+
+mu = np.mean(x_train, axis=0)
+sigma = np.std(x_train, axis=0)
+x_norm = (x_train - mu) / sigma
+x_train = x_norm
 
 #plot the first feature vs the target
 #plt.style.use("ggplot")
