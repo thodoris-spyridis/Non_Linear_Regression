@@ -27,19 +27,19 @@ x_norm = (x_train - mu) / sigma
 x_train = x_norm
 
 #plot the first feature vs the target
-#plt.style.use("ggplot")
-#plt.scatter(y=y_train, x=x_train[:, 0:1], marker="o", c="b")
-#plt.title("Price vs Square meters")
-#plt.xlabel("Price")
-#plt.ylabel("Square meters")
-#plt.show()
+plt.style.use("ggplot")
+plt.scatter(y=y_train, x=x_train[:, 0:1], marker="o", c="b")
+plt.title("Price vs Square meters")
+plt.xlabel("Price")
+plt.ylabel("Square meters")
+plt.show()
 
-##plot the second feature vs the target
-#plt.scatter(y=y_train, x=x_train[:, 1:], marker="o", c="b")
-#plt.title("Price vs Year")
-#plt.xlabel("Price")
-#plt.ylabel("Year")
-#plt.show()
+#plot the second feature vs the target
+plt.scatter(y=y_train, x=x_train[:, 1:], marker="o", c="b")
+plt.title("Price vs Year")
+plt.xlabel("Price")
+plt.ylabel("Year")
+plt.show()
 
 
 
